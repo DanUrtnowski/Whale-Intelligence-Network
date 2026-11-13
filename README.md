@@ -22,7 +22,7 @@ privately; no source code is published here.
 | **Research** | Crossref REST API and arXiv, narrow cetacean queries, DOI de-duplication | title, authors, publication date, journal, DOI or arXiv identifier, article type, publisher link. Preprints are labelled. No abstracts or full text. |
 | **Conservation** | NOAA Fisheries North Atlantic right whale health updates | short attributed excerpts with the agency's date and a link to the official page. Anything that could reveal a recent or sensitive animal location is held for human review. |
 | **Policy & Notices** | Federal Register API, NOAA/NMFS cetacean documents | agency, document type (proposed rule, final rule, notice), publication date, official abstract, official link, and a deadline only when the source supplies one. |
-| **News** | Twelve open news feeds, including Google News topic queries and ten publisher feeds | headline, publisher, date and link to the publisher. No article text, images or video. |
+| **News** | Seventeen open feeds: twelve Google News topic queries plus The Guardian, New England Aquarium, NOAA, ScienceDaily and Pacific Whale Foundation | headline, publisher, date and link to the publisher. No article text, images or video. |
 
 ![Three lanes](images/win-streams.png)
 

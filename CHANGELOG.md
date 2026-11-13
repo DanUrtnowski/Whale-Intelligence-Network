@@ -2,6 +2,14 @@
 
 Publicly reportable milestones only. Internal review material stays private.
 
+## 2026-11-13 — Feed curation
+
+- Measured every news feed's actual yield and retired the five that produced no cetacean items.
+- Replaced them with twelve Google News topic queries and a Guardian marine-life feed; the News
+  lane now carries 450 records from 17 feeds.
+- Added exclusion rules for headlines that share a name with another industry, cross-feed
+  duplicate suppression, and per-stream publish limits.
+
 ## 2026-11-13 — Data expansion: News lane and Whale Atlas
 
 - Live at the project's own address, verified over public HTTPS.
