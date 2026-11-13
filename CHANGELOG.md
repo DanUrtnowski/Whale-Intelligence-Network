@@ -2,36 +2,55 @@
 
 Publicly reportable milestones only. Internal review material stays private.
 
-## 2026-10-31 — Concept preview and reviewer walkthrough
+## 2026-11-13 — Three sourced streams published
 
-- A working concept preview built to let a subject-matter reviewer judge scope,
-  visual identity, content structure and the mapping explorer before any
-  organisation, account or real dataset exists.
-- An evidence-backed demonstration feed: clustered stories, a retained correction
-  trail, separated publication and ingestion dates, and per-claim status.
-- A verification guard that refuses a corroborated status without a named human,
-  a check date and two distinct origins.
-- A spatial explorer with layered records, provenance on selection and buffer
-  analysis, built without a heavy map dependency.
-- A guided review walkthrough for the project's reviewer, covering scope, media
-  handling and consent.
-- All demonstration content labelled as demonstration content; no external links
-  presented as citations, because attributing fabricated material to a real
-  publisher would be worse than having no citation.
+- Live site with three independent, real streams: **Research** (Crossref REST API),
+  **Conservation** (NOAA Fisheries North Atlantic right whale health updates) and
+  **Policy & Notices** (Federal Register API, NOAA/NMFS cetacean documents).
+- Every record carries its source, canonical link, the source's publication date and
+  the date it was first seen. Research records resolve through their DOI; policy
+  records distinguish proposed rules, final rules and notices; a deadline appears only
+  when the source supplies one.
+- A source registry with per-source enable switches, polling intervals, rights
+  declarations and health status, so a fourth connector does not require changes to the
+  scheduler, the publisher or the feed layout.
+- Versioned publishing: a complete edition snapshot is written before the pointer moves,
+  the previous good edition is retained, and corrections are kept as revisions.
+- Safety gate: records that could reveal a recent or sensitive animal location, unclear
+  rights or unclear identity are held in a private review queue instead of published.
+- Last successful source check is reported separately from last content change; a
+  stopped collector leaves the last good edition online with a visible age.
+- The Ocean Explorer returns with species, date and layer filters and on-click
+  provenance. Its synthetic data sits in a labelled **Illustrative Demo** layer that is
+  off by default and excluded from live counts.
+- A Sources & Methodology page documents every endpoint, cadence, republished field and
+  the limits of the map.
 
-### Stated limitation
+### Stated limitations
 
-No live source, no scrape, no organisation, no cleared name. Population figures
-are deliberately absent.
+- Snapshot storage is blocked on billing activation, so the public site currently serves
+  the most recent complete edition bundled at build time.
+- The dedicated public address is being moved to its own hostname; until that DNS record
+  exists the site is served from its Cloudflare Pages address.
+- The individual-whale registry is not cleared for public release and is not published.
+- No population figures, no animal positions, no social accounts.
 
 ## 2026-11-03 — Public showcase established
 
 - Public project description published, separating proposed capabilities from
   established facts.
-- Confirmed in public that reviewer editorial content, voice, likeness and
-  personal material remain under the reviewer's approval and are not published.
+- Confirmed in public that a contributor's editorial content, voice, likeness and
+  personal material remain under that person's approval and are not published.
 
-## Paused
+## 2026-10-31 — Concept preview and reviewer walkthrough
 
-Data ingestion and organisational work, pending reviewer input and name
-clearance.
+- A working concept preview built to let a subject-matter reviewer judge scope,
+  visual identity, content structure and the mapping explorer before any
+  organisation, account or real dataset exists.
+- A verification guard that refuses a corroborated status without a named human,
+  a check date and two distinct origins.
+- A spatial explorer with layered records, provenance on selection and buffer
+  analysis, built without a heavy map dependency.
+- All demonstration content labelled as demonstration content; no external links
+  presented as citations, because attributing fabricated material to a real
+  publisher would be worse than having no citation.

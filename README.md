@@ -1,112 +1,97 @@
 # Whale Intelligence Network
 
-![Whale Intelligence Network mark](images/mark.svg)
+![Whale Intelligence Network](images/win-home.png)
 
-A conservation and evidence-oriented platform for whale and dolphin research:
-news, observations, mapping and expert-reviewed publishing, built so that a claim
-can always be traced to the evidence behind it.
+**Live:** <https://whale-intelligence-network.pages.dev>
 
-**Status: concept preview.** The Whale Intelligence Network is **not** an
-incorporated organisation. The name is provisional and uncleared. Nothing here is
-a live sighting feed, and no social account is connected.
+A conservation and research platform for whales, dolphins and marine conservation,
+built so that a claim can always be traced to the source behind it. This release
+publishes three real, independent streams and a spatial explorer — every record
+carries its publisher, a canonical link, the source's own publication date and the
+date it was first seen.
 
-This repository is a **public project showcase**. No implementation source is
-published here.
+This repository is a **public project showcase**. The implementation is developed
+privately; no source code is published here.
 
 ---
 
-## The problem
+## What this release actually does
 
-Marine mammal information is abundant, uneven and hard to check. A sighting
-circulates as a screenshot; a population figure is quoted without its survey; a
-photograph is republished until nobody knows who took it. Good research and good
-journalism both suffer from the same missing layer: a record of *where a claim
-came from*.
+| Lane | Source | What is shown |
+|---|---|---|
+| **Research** | Crossref REST API, narrow cetacean queries, DOI de-duplication | title, authors, publication date, journal, DOI, article type, publisher link. Preprints are labelled. No abstracts or full text. |
+| **Conservation** | NOAA Fisheries North Atlantic right whale health updates | short attributed excerpts with the agency's date and a link to the official page. Anything that could reveal a recent or sensitive animal location is held for human review. |
+| **Policy & Notices** | Federal Register API, NOAA/NMFS cetacean documents | agency, document type (proposed rule, final rule, notice), publication date, official abstract, official link, and a deadline only when the source supplies one. |
 
-## Approach
+![Three lanes](images/win-streams.png)
 
-Everything in the intended platform is organised around provenance rather than
-around engagement:
+Each lane is an independent connector with its own polling interval, enable switch,
+rights declaration and health status. A source that fails is marked failing and keeps
+its previous successful check on display; the other two lanes continue, and the site
+keeps serving the last complete edition with its age.
 
-- **Claims, not just stories.** Each published item separates what is asserted
-  from the evidence supporting it, and carries a status per claim.
-- **Corrections are first-class.** A correction trail and revision history are
-  part of the record, not a footnote added later.
-- **Republished copies are not corroboration.** The same origin appearing twice
-  collapses into one story, and the platform never counts it as independent
-  confirmation.
-- **Corroboration requires a named human.** A status of `corroborated` cannot be
-  reached without a named reviewer, a check date and two genuinely distinct
-  origins — and demonstration records can never present a claim as `confirmed`.
+**Last successful source check** and **last content change** are reported separately.
+An unchanged source is not a failed source, and a successful poll is not a new story.
 
-## Proposed capabilities
+## Ocean Explorer
 
-These are design targets for the platform, described so the scope can be judged.
-They are not claims that the capability exists today.
+The GIS explorer returns with species, date and layer filters, on-click provenance and
+buffer analysis. Its data lives in a clearly labelled **Illustrative Demo** layer that
+is off by default, excluded from every live record count, and marked synthetic wherever
+it appears. This release publishes no animal positions, no tracks and no location-bearing
+media.
 
-| Area | Intent |
+![Ocean Explorer](images/win-explorer.png)
+
+## Where the data comes from
+
+A Sources & Methodology page inside the site explains every
+endpoint, how often it is checked, what fields are republished and what the map does and
+does not show.
+
+- **Safe metadata publishes automatically** from approved sources.
+- **Uncertain, restricted or sensitive material is held** in a private review queue for
+  the publication contact, and never enters a public payload.
+- Records are de-duplicated by stable source IDs, corrections are retained as revisions,
+  and no publication happens from a partial edition: a complete versioned snapshot is
+  written before the pointer moves, and the previous good version is kept for rollback.
+
+## Screenshots
+
+| Sources & methodology | Mobile |
 |---|---|
-| **Intelligence feed** | Sourcing, verification status and date handling for research news, with per-claim evidence and corrections. |
-| **Observations** | Structured sightings and survey records with location, date, species and observer attribution. |
-| **Mapping and GIS** | Layered map exploration with per-record provenance, on-click attribution and spatial analysis such as distance and buffer queries. |
-| **Species reference** | Species entries that cite agency sources and **make no population claims** of their own. |
-| **Expert-reviewed publishing** | A review path where a named specialist approves content before it is presented as reviewed. |
-| **Research register** | A source register linking out to authoritative bodies rather than restating their numbers. |
-
-## What is not established
-
-Stated plainly:
-
-- **Not an organisation.** No nonprofit status, no board, no formal structure.
-- **Not a live data platform.** There is no live sighting feed and no connected
-  social account. Any demonstration content is explicitly labelled as such.
-- **No conservation conclusions.** The platform does not publish population
-  estimates, trend claims or policy recommendations of its own. It is
-  infrastructure for evidence, not a source of findings.
-- **No independent scientific review.** The review *workflow* is designed; no
-  external scientific body has validated the platform or its content.
-- **No public source code.** The prototype is developed privately.
-
-## Governance and consent
-
-Editorial and personal material is controlled by the person it belongs to:
-
-**Cherilyn Jones controls approval of her editorial content, voice, likeness,
-photographs and other personal material.** Nothing attributable to her is
-published, presented or distributed without her explicit approval. Her review
-materials, recordings and personal assets are held privately for review purposes
-and are **not** part of this repository.
-
-The same principle applies to any future contributor: consent is recorded before
-material is used, and withdrawal of consent is honoured.
+| ![Sources and methodology](images/win-sources.png) | ![Mobile](images/win-mobile.png) |
 
 ## Roadmap
 
 | Stage | State |
 |---|---|
-| Concept preview and reviewer walkthrough | Complete |
-| Review-driven scope revision | Awaiting reviewer input |
-| Source register and verification workflow hardening | Planned |
+| Three sourced streams, spatial explorer, public site | Shipped |
+| Hourly unattended collection and versioned publishing | Running on a scheduled local collector |
+| Durable object storage for published snapshots | Blocked on storage billing activation |
+| Fourth connector (NOAA passive acoustics archive, metadata only) | Planned, pending a rights review |
+| Individual-whale registry | Not cleared for public release; stays private |
 | Formal organisational structure and name clearance | Not started |
-| Public data ingestion | Not started, and gated on the above |
 
-## Intended audience
+## What is not established
 
-Marine mammal researchers and field observers, conservation communicators who
-need defensible sourcing, science journalists, and educators who want traceable
-material rather than viral summaries.
+- **Not an organisation.** No nonprofit status, no board, no formal structure.
+- **Not a live sighting feed.** No animal positions, no tracks, no social accounts.
+- No population estimates, trend claims or policy recommendations of the platform's own.
+- No photographs, audio or footage from any source is mirrored.
+- No independent scientific review of the platform or its content.
+
+## Content rights
+
+- Crossref metadata is CC0; article text and abstracts remain the publisher's copyright and are not copied.
+- NOAA Fisheries material is a US Government work, republished as short attributed excerpts without implying endorsement.
+- Federal Register documents are public domain; the official abstract is used.
+- Every record links to the original publisher rather than reproducing it.
+- The individual-whale registry is kept separate from observations and is not part of this release.
 
 ## Related projects
 
 Other projects in this portfolio are listed on the
-[portfolio profile](https://github.com/DanUrtnowski).
-
-## Licensing and content rights
-
-- No licence is granted by this repository for the private implementation.
-- No photographs, recordings, footage or other personal assets are published
-  here. All such material remains with its owner and is subject to the approval
-  described above.
-- Third-party sources referenced by name remain the property of their publishers.
+[profile](https://github.com/DanUrtnowski).
 
 See [CHANGELOG.md](CHANGELOG.md) for the public milestone record.
