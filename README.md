@@ -19,9 +19,10 @@ privately; no source code is published here.
 
 | Lane | Source | What is shown |
 |---|---|---|
-| **Research** | Crossref REST API, narrow cetacean queries, DOI de-duplication | title, authors, publication date, journal, DOI, article type, publisher link. Preprints are labelled. No abstracts or full text. |
+| **Research** | Crossref REST API and arXiv, narrow cetacean queries, DOI de-duplication | title, authors, publication date, journal, DOI or arXiv identifier, article type, publisher link. Preprints are labelled. No abstracts or full text. |
 | **Conservation** | NOAA Fisheries North Atlantic right whale health updates | short attributed excerpts with the agency's date and a link to the official page. Anything that could reveal a recent or sensitive animal location is held for human review. |
 | **Policy & Notices** | Federal Register API, NOAA/NMFS cetacean documents | agency, document type (proposed rule, final rule, notice), publication date, official abstract, official link, and a deadline only when the source supplies one. |
+| **News** | Twelve open news feeds, including Google News topic queries and ten publisher feeds | headline, publisher, date and link to the publisher. No article text, images or video. |
 
 ![Three lanes](images/win-streams.png)
 
@@ -32,6 +33,15 @@ keeps serving the last complete edition with its age.
 
 **Last successful source check** and **last content change** are reported separately.
 An unchanged source is not a failed source, and a successful poll is not a new story.
+
+## Whale Atlas
+
+A historical map built from OBIS — real, georeferenced cetacean records from 1950 onward.
+Records are aggregated into 1° cells of about 111 km before publication, so the browser
+receives cells and counts, never an individual position. Species-group and period filters,
+plus a rank list of the densest cells.
+
+![Whale Atlas](images/win-atlas.png)
 
 ## Ocean Explorer
 

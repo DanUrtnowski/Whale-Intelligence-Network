@@ -2,6 +2,18 @@
 
 Publicly reportable milestones only. Internal review material stays private.
 
+## 2026-11-13 — Data expansion: News lane and Whale Atlas
+
+- Live at the project's own address, verified over public HTTPS.
+- A **News** lane with twelve independent open feeds — Google News topic queries plus Oceana,
+  Woods Hole, Mongabay, Hakai, the New England Aquarium, NOAA, ScienceDaily, Pacific Whale
+  Foundation and Cascadia Research — publishing headline, publisher and link only.
+- **arXiv** preprints added to the Research lane, labelled as not yet peer reviewed.
+- A **Whale Atlas**: historical cetacean records from OBIS, licence-filtered to CC0 and CC BY,
+  aggregated into 1° cells of about 111 km with species-group and period filters. The site
+  receives aggregated cells, never an individual position.
+- Explainer copy trimmed throughout.
+
 ## 2026-11-13 — Three sourced streams published
 
 - Live site with three independent, real streams: **Research** (Crossref REST API),
