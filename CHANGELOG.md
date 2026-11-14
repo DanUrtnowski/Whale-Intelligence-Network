@@ -7,6 +7,7 @@ Publicly reportable milestones only. Internal review material stays private.
 - The News lane is grouped into topic sections (right whales, blue whales, humpbacks, orcas,
   ship strikes, entanglement, strandings, vaquita, other whales, conservation).
 - Added a source filter and 30-headline pages instead of one 450-item column.
+- Headline search now narrows the lane across every topic group and source.
 - Removed headlines that only shared a name with a cetacean: Orcas Island ferry news, wetsuits
   and keyboard reviews from the orca query.
 
