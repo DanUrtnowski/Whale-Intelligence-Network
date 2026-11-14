@@ -20,6 +20,8 @@ Publicly reportable milestones only. Internal review material stays private.
   exercise, Dune costumes) and de-duplicates syndicated headlines.
 - Conservation publishes one record per destination instead of nine titles on one NOAA page.
 - Escape closes the mobile menu; the home stat reads “Edition records”.
+- The Explorer record drawer’s close button now works and both it and Escape return focus to
+  the record that opened the drawer.
 
 ## 2026-11-14 — News lane readability
 
