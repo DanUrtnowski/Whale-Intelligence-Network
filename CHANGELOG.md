@@ -2,6 +2,18 @@
 
 Publicly reportable milestones only. Internal review material stays private.
 
+## 2026-11-14 — QA fixes
+
+- Sources table crash fixed: source health is merged onto the edition list instead of read from
+  the status payload, which carries health only.
+- Ocean Explorer renders again: the map painted only inside requestAnimationFrame, which
+  background and headless browsers defer, so it now paints its first frame synchronously and
+  keeps a timer fallback.
+- News excludes shared-name false positives (Orca Security, ORCA Computing, Blue Whale-2026
+  exercise, Dune costumes) and de-duplicates syndicated headlines.
+- Conservation publishes one record per destination instead of nine titles on one NOAA page.
+- Escape closes the mobile menu; the home stat reads “Edition records”.
+
 ## 2026-11-14 — News lane readability
 
 - The News lane is grouped into topic sections (right whales, blue whales, humpbacks, orcas,
