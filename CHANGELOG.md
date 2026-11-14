@@ -2,6 +2,13 @@
 
 Publicly reportable milestones only. Internal review material stays private.
 
+## 2026-11-14 — Clean headlines
+
+- News headlines lose the repeated “ - Publisher” tail, since the outlet is already shown on the
+  card; matching only the record’s own outlet leaves real dashes and “| Exclusive” tags intact.
+- The published headline is part of the edition fingerprint, so a cleaned headline publishes a
+  new edition.
+
 ## 2026-11-14 — Multi-outlet coverage
 
 - Copies of one story are clustered in the publisher: the newest headline is the record and the
