@@ -2,6 +2,15 @@
 
 Publicly reportable milestones only. Internal review material stays private.
 
+## 2026-11-14 — Multi-outlet coverage
+
+- Copies of one story are clustered in the publisher: the newest headline is the record and the
+  other outlets appear as coverage links (e.g. “Also covered by Monterey Herald, USA Today”).
+- Clustering uses headline overlap plus place/name cues and a four-day window, so reworded
+  coverage of one event joins, while unrelated stories that share a place do not.
+- The edition fingerprint now covers the coverage lists, so a newly attached outlet publishes
+  a new edition.
+
 ## 2026-11-14 — Plain-language copy
 
 - Home headings are plain labels instead of essayistic ones (e.g. “Four streams, one timeline”).
