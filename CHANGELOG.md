@@ -2,6 +2,13 @@
 
 Publicly reportable milestones only. Internal review material stays private.
 
+## 2026-11-14 — Plain-language copy
+
+- Home headings are plain labels instead of essayistic ones (e.g. “Four streams, one timeline”).
+- Sources methodology essays collapse into five expandable panels, keeping the health table
+  above the fold.
+- Footer drops the duplicated stream list for a single line of four links.
+
 ## 2026-11-14 — QA fixes
 
 - Sources table crash fixed: source health is merged onto the edition list instead of read from
